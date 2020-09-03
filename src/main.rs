@@ -7,12 +7,16 @@
 // mod raii;
 // mod immutable;
 // mod borrowing;
-mod immutalbe_ref;
+// mod immutalbe_ref;
+// mod freeze;
+mod reference;
 
 fn main() {
     // owership::main();
     // raii::main();
     // immutable::main();
     // borrowing::main();
-    immutalbe_ref::main();
+    // immutalbe_ref::main();
+    // freeze::main();
+    reference::main();
 }
