@@ -11,7 +11,8 @@
 // mod freeze;
 // mod reference;
 // mod lifetime;
-mod loops;
+// mod loops;
+mod fibonacci;
 
 fn main() {
     // owership::main();
@@ -22,5 +23,6 @@ fn main() {
     // freeze::main();
     // reference::main();
     // lifetime::main();
-    loops::main();
+    // loops::main();
+    fibonacci::main();
 }
