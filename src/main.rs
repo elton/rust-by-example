@@ -9,7 +9,8 @@
 // mod borrowing;
 // mod immutalbe_ref;
 // mod freeze;
-mod reference;
+// mod reference;
+mod lifetime;
 
 fn main() {
     // owership::main();
@@ -18,5 +19,6 @@ fn main() {
     // borrowing::main();
     // immutalbe_ref::main();
     // freeze::main();
-    reference::main();
+    // reference::main();
+    lifetime::main();
 }
