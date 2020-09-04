@@ -10,7 +10,8 @@
 // mod immutalbe_ref;
 // mod freeze;
 // mod reference;
-mod lifetime;
+// mod lifetime;
+mod loops;
 
 fn main() {
     // owership::main();
@@ -20,5 +21,6 @@ fn main() {
     // immutalbe_ref::main();
     // freeze::main();
     // reference::main();
-    lifetime::main();
+    // lifetime::main();
+    loops::main();
 }
