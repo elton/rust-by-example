@@ -15,7 +15,8 @@
 // mod fibonacci;
 // mod strings;
 // mod hash_map;
-mod median;
+// mod median;
+mod iter;
 
 fn main() {
     // owership::main();
@@ -30,5 +31,6 @@ fn main() {
     // fibonacci::main();
     // strings::main();
     // hash_map::main();
-    median::main();
+    // median::main();
+    iter::main();
 }

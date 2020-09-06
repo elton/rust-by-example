@@ -12,9 +12,7 @@ fn rand_vec(num: u32) -> Vec<u32> {
         i += 1;
     }
     // 打印生成好的随机自然数 Vector
-    print!("The original Vector is: ");
-    numbers.iter().fold((), |_, n| print!("{}, ", n));
-    println!();
+    println!("The original Vector is: {:?}", numbers);
 
     numbers
 }
