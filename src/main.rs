@@ -12,7 +12,8 @@
 // mod reference;
 // mod lifetime;
 // mod loops;
-mod fibonacci;
+// mod fibonacci;
+mod strings;
 
 fn main() {
     // owership::main();
@@ -24,5 +25,6 @@ fn main() {
     // reference::main();
     // lifetime::main();
     // loops::main();
-    fibonacci::main();
+    // fibonacci::main();
+    strings::main();
 }
