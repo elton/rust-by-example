@@ -13,7 +13,9 @@
 // mod lifetime;
 // mod loops;
 // mod fibonacci;
-mod strings;
+// mod strings;
+// mod hash_map;
+mod median;
 
 fn main() {
     // owership::main();
@@ -26,5 +28,7 @@ fn main() {
     // lifetime::main();
     // loops::main();
     // fibonacci::main();
-    strings::main();
+    // strings::main();
+    // hash_map::main();
+    median::main();
 }
