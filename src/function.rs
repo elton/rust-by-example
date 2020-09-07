@@ -1,7 +1,7 @@
 pub fn main() {
     let res: i32 = (0..10)
         .map(|x| x * x)
-        .inspect(|x| println!("value {}", x))
+        .inspect(|x| println!("value {}", x)) // 每次迭代中执行，利用它的副作用
         .filter(|x| *x < 3)
         .filter_map(|x| Some(x))
         .fold(0, |x, y| x + y);
