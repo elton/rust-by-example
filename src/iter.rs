@@ -49,4 +49,68 @@ pub fn main() {
         .filter(|&(i, x)| (i + x) % 3 == 0)
         // .collect::<Vec<(_, _)>>();
         .for_each(|(i, x)| println!("{}:{}", i, x));
+
+    let (even, odd): (Vec<i32>, Vec<i32>) = (0..10).partition(|&x| x % 2 == 0);
+    println!("even: {:?}", even);
+    println!("odd: {:?}", odd);
+
+    let a = [-3_i32, 0, 1, 5, -10];
+    println!("Max number: {}", a.iter().max_by_key(|x| x.abs()).unwrap());
+    println!("Max number: {}", a.iter().max_by(|x, y| x.cmp(y)).unwrap());
+    println!("Min number: {}", a.iter().min_by_key(|x| x.abs()).unwrap());
+
+    println!("Sum of 0..101: {}", (0..101).sum::<u32>());
+
+    fn factorial(n: u32) -> u32 {
+        (1..=n).product() //所有元素相乘，`(1..=n)`是包含n，`(1..n)`是不包含n
+    }
+
+    println!("5! = {}", factorial(5));
+
+    println!("{:?}", (0..=10).take(5).collect::<Vec<_>>());
+    println!("{:?}", (0..=10).skip(3).collect::<Vec<_>>());
+    println!("first: {}", (0..=10).collect::<Vec<_>>().first().unwrap());
+    println!("last: {}", (0..=10).collect::<Vec<_>>().last().unwrap());
+    println!("{:?}", (0..=10).collect::<Vec<_>>().get(0..2).unwrap());
+
+    let mut a = (0..=10).collect::<Vec<_>>();
+    a.swap(1, 3);
+    println!("swap(1,3): {:?}", a);
+    a.reverse();
+    println!("reverse: {:?}", a);
+
+    let mut arr = [0u8; 10];
+    use rand::distributions::{Standard, Uniform};
+    use rand::{thread_rng, Rng};
+
+    let mut rng = thread_rng();
+
+    rng.fill(&mut arr[..]);
+    arr.sort();
+    println!("sorted array: {:?}", arr);
+
+    let v: Vec<u8> = rng.sample_iter(Standard).take(20).collect();
+    println!("Vector: {:?}", v);
+
+    let rang = Uniform::new_inclusive(0, 100); //包含起始值的均匀分布
+    let mut v: Vec<u8> = rng.sample_iter(rang).take(20).collect();
+    println!("Vector: {:?}", v);
+
+    v.sort_by(|a, b| a.cmp(b));
+    println!("Sorted Vec: {:?}", v);
+    v.sort_by(|a, b| b.cmp(a));
+    println!("Reverse Sorting: {:?}", v);
+
+    let rang = Uniform::new_inclusive(-127.0, 128.0);
+    let mut v: Vec<f32> = rng.sample_iter(rang).take(20).collect();
+    println!("Vector: {:?}", v);
+
+    v.sort_by(|a, b| a.partial_cmp(b).unwrap());
+    println!("Sorted Vector: {:?}", v);
+
+    let rang = Uniform::new_inclusive(-128, 127);
+    let mut v: Vec<i8> = rng.sample_iter(rang).take(20).collect();
+    println!("Vector: {:?}", v);
+    v.sort_by_cached_key(|k| k.abs());
+    println!("Sorted by ABS(): {:?}", v);
 }
