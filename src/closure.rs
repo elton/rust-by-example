@@ -1,3 +1,4 @@
+// 缓存第一次传入的值
 struct Cache<T>
 where
     T: Fn(u32) -> u32,
@@ -32,5 +33,8 @@ where
 pub fn main() {
     let mut c = Cache::new(|x| x + 1);
     let res = c.value(1);
+    println!("res: {}", res);
+
+    let res = c.value(2);
     println!("res: {}", res);
 }
