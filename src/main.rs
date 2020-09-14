@@ -16,8 +16,9 @@
 // mod strings;
 // mod hash_map;
 // mod median;
-mod iter;
+// mod iter;
 // mod function;
+mod closure;
 
 fn main() {
     // owership::main();
@@ -33,6 +34,7 @@ fn main() {
     // strings::main();
     // hash_map::main();
     // median::main();
-    iter::main();
+    // iter::main();
     // function::main();
+    closure::main();
 }
